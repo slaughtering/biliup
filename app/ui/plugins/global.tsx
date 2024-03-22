@@ -221,7 +221,7 @@ const Global: React.FC = () => {
                     field="uploader"
                     label="上传插件（uploader）"
                     extraText="全局默认上传插件选择。"
-                    placeholder="biliup-rs"
+                    placeholder="Noop"
                     style={{ width: "100%" }}
                     fieldStyle={{
                         alignSelf: "stretch",
@@ -233,10 +233,10 @@ const Global: React.FC = () => {
                         bili_web
                     </Form.Select.Option>
                     <Form.Select.Option value="biliup-rs">
-                        biliup-rs（默认）
+                        biliup-rs
                     </Form.Select.Option>
                     <Form.Select.Option value="Noop">
-                        Noop（即不上传，但会执行后处理）
+                        Noop（不上传，但会执行后处理）
                     </Form.Select.Option>
                 </Form.Select>
                 <Form.Select
