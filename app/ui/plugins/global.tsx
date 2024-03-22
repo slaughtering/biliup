@@ -27,7 +27,7 @@ const Global: React.FC = () => {
                 <Form.Select
                     label="下载插件（downloader）"
                     field="downloader"
-                    placeholder="stream-gears（默认）"
+                    placeholder="ffmpeg"
                     maxTagCount={3}
                     // initValue="stream-gears"
                     extraText={
@@ -39,7 +39,7 @@ const Global: React.FC = () => {
                             <br />
                             2. ffmpeg（纯ffmpeg下载。请手动安装ffmpeg）
                             <br />
-                            3. stream-gears（默认）
+                            3. stream-gears
                         </div>
                     }
                     style={{ width: "100%" }}
@@ -52,9 +52,9 @@ const Global: React.FC = () => {
                     <Select.Option value="streamlink">
                         streamlink（hls多线程下载）
                     </Select.Option>
-                    <Select.Option value="ffmpeg">ffmpeg</Select.Option>
+                    <Select.Option value="ffmpeg">ffmpeg(默认)</Select.Option>
                     <Select.Option value="stream-gears">
-                        stream-gears（默认）
+                        stream-gears
                     </Select.Option>
                 </Form.Select>
                 <Form.InputNumber
