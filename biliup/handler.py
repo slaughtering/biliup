@@ -121,7 +121,9 @@ def uploaded(name, live_cover_path, data: List):
         # 删除封面
         if live_cover_path is not None:
             UploadBase.remove_file(live_cover_path)
-        return UploadBase.remove_filelist(data)
+        # return UploadBase.remove_filelist(data)
+        print('downloaded\n', data, '\ndone')
+        return None
 
     file_list = []
     for i in data:
