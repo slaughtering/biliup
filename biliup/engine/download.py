@@ -176,13 +176,11 @@ class DownloadBase(ABC):
             default_input_args += ['-max_reload', '1000']
         args = ['ffmpeg', '-y', *default_input_args,
                 '-i', self.raw_stream_url, *self.default_output_args, *self.opt_args,
-                '-c', 'copy', '-f', self.suffix]
-        # if config.get('segment_time'):
-        #     args += ['-f', 'segment',
-        #              f'{filename} part-%03d.{self.suffix}']
-        # else:
-        #     args += [
-        #         f'{filename}.{self.suffix}.part']
+                '-c', 'copy']
+        if self.suffix == 'mkv':
+            args += ['-f', 'matroska']
+        else:
+            args += ['-f', self.suffix]
         args += [f'{filename}.{self.suffix}.part']
 
         proc = subprocess.Popen(args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
