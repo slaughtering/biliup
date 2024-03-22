@@ -16,7 +16,7 @@ from ..engine.download import DownloadBase
 
 @Plugin.download(regexp=r'(?:https?://)?(?:(?:www|m|live)\.)?douyin\.com')
 class Douyin(DownloadBase):
-    def __init__(self, fname, url, suffix='flv'):
+    def __init__(self, fname, url, suffix='mkv'):
         super().__init__(fname, url, suffix)
         self.douyin_danmaku = config.get('douyin_danmaku', False)
         self.fake_headers['referer'] = "https://live.douyin.com/"
