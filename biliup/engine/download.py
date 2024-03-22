@@ -43,7 +43,7 @@ class DownloadBase(ABC):
             self.suffix = suffix.lower()
         self.live_cover_path = None
         self.database_row_id = 0
-        self.downloader = config.get('downloader', 'stream-gears')
+        self.downloader = config.get('downloader', 'ffmpeg')
         # ffmpeg.exe -i  http://vfile1.grtn.cn/2018/1542/0254/3368/154202543368.ssm/154202543368.m3u8
         # -c copy -bsf:a aac_adtstoasc -movflags +faststart output.mp4
         self.raw_stream_url = None
