@@ -82,6 +82,8 @@ def process(name, url):
         suffix = kwargs.get('format')
         if suffix:
             kwargs['suffix'] = suffix
+        else:
+            kwargs['suffix'] = 'mkv'
         url_status[url] = 1
         stream_info = download(name, url, **kwargs)
         # 永远不可能有两个同url的下载线程
