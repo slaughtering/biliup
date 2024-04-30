@@ -176,7 +176,7 @@ class DownloadBase(ABC):
             default_input_args += ['-max_reload', '1000']
         args = ['ffmpeg', '-y', *default_input_args,
                 '-i', self.raw_stream_url, *self.default_output_args, *self.opt_args,
-                '-c', 'copy', '-f', self.suffix]
+                '-c', 'copy', '-f', 'matroska' if self.suffix == 'mkv' else self.suffix]
         # if config.get('segment_time'):
         #     args += ['-f', 'segment',
         #              f'{filename} part-%03d.{self.suffix}']
