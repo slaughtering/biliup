@@ -195,7 +195,7 @@ class DownloadBase(ABC):
 
                 output_args += self.opt_args
 
-                args = ['ffmpeg', '-y', *input_args, *output_args, '-c', 'copy', '-f', self.suffix,
+                args = ['ffmpeg', '-y', *input_args, *output_args, '-c', 'copy', '-f', 'matroska' if self.suffix == 'mkv' else self.suffix,
                         f'{fmt_file_name}.{self.suffix}.part']
                 with subprocess.Popen(args, stdin=subprocess.DEVNULL if not streamlink_proc else streamlink_proc.stdout,
                                       stdout=subprocess.PIPE, stderr=subprocess.STDOUT) as proc:
