@@ -27,4 +27,6 @@ def biliup_download(name, url, kwargs: dict):
     suffix = kwargs.get('format')
     if suffix:
         kwargs['suffix'] = suffix
+    else:
+        kwargs['suffix'] = 'mkv'
     return download(name, url, **kwargs)
